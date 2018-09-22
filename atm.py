@@ -16,13 +16,17 @@ class ATM():
   elif request < 0 :
       print"More than zero plz!"
   else:
-      for i in ATM.PAPERS:
-        while i<=request:
-          print("give"+str(i))
-          self.withdrawals_list.append(i)
-          request -= i
-      self.withdrawals_list.append("**")
+      self.take_money(request)
       self.balance=balance_total
+
+ def take_money(self,request):
+  for i in ATM.PAPERS:
+   while i<=request:
+      print("give"+str(i))
+      self.withdrawals_list.append(i)
+      request -= i
+  self.withdrawals_list.append("**")
+  
 
  def show_withdrawals(self):
   sum1=0
